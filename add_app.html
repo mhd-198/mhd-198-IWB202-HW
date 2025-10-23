@@ -1,81 +1,111 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <title>إضافة تطبيق جديد - SMART TECH</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="myFunctions.js" defer></script>
-</head>
-<body>
-  <header class="site-header">
-    <div class="brand">
-      <img src="logo.png" alt="SMART TECH Logo" class="logo" />
-      <div class="title">SMART TECH — AI Technology</div>
-    </div>
-    <nav>
-      <a href="home.html">الرئيسية</a>
-      <a href="aboutus.html">من نحن</a>
-      <a href="apps.html">التطبيقات</a>
-      <a class="active" href="add_app.html">إضافة تطبيق</a>
-    </nav>
-  </header>
-
-  <main class="container">
-    <div class="card form-card">
-      <div class="form-head">
-        <h1>إضافة تطبيق جديد</h1>
-        <p class="hint">املأ الحقول التالية ثم اضغط <strong>إرسال</strong>. يتم التحقق من المدخلات وحفظها مؤقتًا، ثم الانتقال لصفحة التطبيقات.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <title>إضافة تطبيق جديد - SMART TECH</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="myFunctions.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <img src="img/logo.png" alt="SMART TECH Logo" class="logo" />
+        <div class="title">SMART TECH — AI Technology</div>
       </div>
+      <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="aboutus.html">من نحن</a>
+        <a href="apps.html">التطبيقات</a>
+        <a class="active" href="add_app.html">إضافة تطبيق</a>
+      </nav>
+    </header>
 
-      <form id="appForm" class="stack-form" novalidate>
-        <div class="form-group">
-          <label for="appName">اسم التطبيق <span class="req">(أحرف إنكليزية فقط بدون فراغات)</span></label>
-          <input type="text" id="appName" placeholder="مثال: ChatGPT" required pattern="^[A-Za-z]+$" />
-          <small class="hint">A–Z فقط بدون مسافات.</small>
+    <main class="container">
+      <div class="card form-card">
+        <div class="form-head">
+          <h1>إضافة تطبيق جديد</h1>
+          <p class="hint">
+            املأ الحقول التالية ثم اضغط <strong>إرسال</strong>. يتم التحقق من
+            المدخلات وحفظها مؤقتًا، ثم الانتقال لصفحة التطبيقات.
+          </p>
         </div>
 
-        <div class="form-group">
-          <label for="company">الشركة المصنعة <span class="req">(أحرف إنكليزية)</span></label>
-          <input type="text" id="company" placeholder="مثال: OpenAI" required pattern="^[A-Za-z ]+$" />
-        </div>
+        <form id="appForm" class="stack-form" novalidate>
+          <div class="form-group">
+            <label for="appName"
+              >اسم التطبيق
+              <span class="req">(أحرف إنكليزية فقط بدون فراغات)</span></label
+            >
+            <input
+              type="text"
+              id="appName"
+              placeholder="مثال: ChatGPT"
+              required
+              pattern="^[A-Za-z]+$"
+            />
+            <small class="hint">A–Z فقط بدون مسافات.</small>
+          </div>
 
-        <div class="form-group">
-          <label for="url">الموقع الإلكتروني (URL)</label>
-          <input type="url" id="url" placeholder="https://example.com" required />
-        </div>
+          <div class="form-group">
+            <label for="company"
+              >الشركة المصنعة <span class="req">(أحرف إنكليزية)</span></label
+            >
+            <input
+              type="text"
+              id="company"
+              placeholder="مثال: OpenAI"
+              required
+              pattern="^[A-Za-z ]+$"
+            />
+          </div>
 
-        <div class="form-group">
-          <label class="inline-label">
-            <input type="checkbox" id="free" />
-            هذا التطبيق مجاني
-          </label>
-        </div>
+          <div class="form-group">
+            <label for="url">الموقع الإلكتروني (URL)</label>
+            <input
+              type="url"
+              id="url"
+              placeholder="https://example.com"
+              required
+            />
+          </div>
 
-        <div class="form-group">
-          <label for="domain">مجال الاستخدام</label>
-          <select id="domain">
-            <option>Education</option>
-            <option>Robotics</option>
-            <option>Healthcare</option>
-            <option>E-Commerce</option>
-            <option>Industrial IoT</option>
-          </select>
-        </div>
+          <div class="form-group">
+            <label class="inline-label">
+              <input type="checkbox" id="free" />
+              هذا التطبيق مجاني
+            </label>
+          </div>
 
-        <div class="form-group">
-          <label for="description">شرح مختصر</label>
-          <textarea id="description" rows="5" placeholder="وصف سريع لفكرة التطبيق وفوائده" required></textarea>
-        </div>
+          <div class="form-group">
+            <label for="domain">مجال الاستخدام</label>
+            <select id="domain">
+              <option>Education</option>
+              <option>Robotics</option>
+              <option>Healthcare</option>
+              <option>E-Commerce</option>
+              <option>Industrial IoT</option>
+            </select>
+          </div>
 
-        <div class="form-actions">
-          <button type="reset" class="btn ghost">إعادة</button>
-          <button type="submit" class="btn primary">إرسال</button>
-        </div>
-      </form>
-    </div>
-  </main>
+          <div class="form-group">
+            <label for="description">شرح مختصر</label>
+            <textarea
+              id="description"
+              rows="5"
+              placeholder="وصف سريع لفكرة التطبيق وفوائده"
+              required
+            ></textarea>
+          </div>
 
-  <footer class="site-footer">© 2025 SMART TECH — AI Technology</footer>
-</body>
+          <div class="form-actions">
+            <button type="reset" class="btn ghost">إعادة</button>
+            <button type="submit" class="btn primary">إرسال</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer class="site-footer">© 2025 SMART TECH — AI Technology</footer>
+  </body>
 </html>
